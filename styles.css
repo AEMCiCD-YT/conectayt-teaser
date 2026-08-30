@@ -1,0 +1,426 @@
+/* ========================================================
+   VARIABLES GLOBALES (Escala en múltiplos de 3)
+   ======================================================== */
+:root {
+    /* Cromática Oficial Conecta YT */
+    --cyt-primary: #00629b;
+    --cyt-secondary: #ef4036;
+    
+    /* Neutros */
+    --bg-light: #ffffff;
+    --bg-gray: #f4f6f8; /* Gris muy sutil para descanso visual */
+    --text-dark: #000000;
+    --text-muted: #4a4a4a;
+    
+    /* Tipografías */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    /* Sistema de Espaciado (Base 3px = 0.1875rem) */
+    --space-sm: 0.75rem;   /* 12px */
+    --space-md: 1.5rem;    /* 24px */
+    --space-lg: 3rem;      /* 48px */
+    --space-xl: 4.5rem;    /* 72px */
+    --space-xxl: 6rem;     /* 96px */
+}
+
+/* ========================================================
+   RESETEO BASE
+   ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* ========================================================
+   TIPOGRAFÍA Y JERARQUÍA
+   ======================================================== */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--cyt-primary);
+    line-height: 1.1;
+}
+
+.hero-title {
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.03em;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+.body-large {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.text-white {
+    color: var(--bg-light);
+}
+
+/* ========================================================
+   HEADER & LOGO (Proporción exacta y centrado)
+   ======================================================== */
+.main-header {
+    /* El padding respeta el múltiplo de 3 para el aire superior e inferior */
+    padding: var(--space-sm) 0; 
+    border-bottom: 1px solid rgba(0, 98, 155, 0.1);
+    background-color: var(--bg-light);
+}
+
+.header-container {
+    display: flex;
+    justify-content: center; /* Fuerza el centrado absoluto del logo */
+    align-items: center;
+}
+
+.header-container a {
+    display: block;
+    /* La proporción exacta de tu mesa de trabajo 1821.21 x 600 */
+    aspect-ratio: 1821.21 / 600; 
+    /* El ancho máximo define el tamaño visual sin romper la proporción */
+    width: 100%;
+    max-width: 340px; 
+    height: auto;
+}
+
+.main-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garantiza que la imagen no se deforme */
+    display: block;
+}
+/* ========================================================
+   HEADER ANCLADO (Sticky / Azul #00629b)
+   ======================================================== */
+.main-header.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--cyt-primary); /* Azul oficial #00629b */
+    padding: var(--space-sm) 0;
+    border-bottom: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Tamaño de logo ajustado a 130px */
+.main-header.is-sticky .header-container a {
+    max-width: 130px;
+}
+
+/* Transforma cualquier logo (SVG o PNG) a blanco puro */
+.main-header.is-sticky .main-logo {
+    filter: brightness(0) invert(1);
+}
+
+/* Animación de entrada suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================================
+   ANIMACIÓN DE SALIDA (Escala y Transparencia)
+   ======================================================== */
+.main-header.is-exiting {
+    /* Mantiene las propiedades del sticky mientras se anima la salida */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--cyt-primary);
+    padding: var(--space-sm) 0;
+    border-bottom: none;
+    
+    /* Nueva animación de salida */
+    animation: fadeScaleOut 0.4s ease-in-out forwards;
+}
+
+.main-header.is-exiting .header-container a {
+    max-width: 130px;
+}
+
+.main-header.is-exiting .main-logo {
+    filter: brightness(0) invert(1);
+}
+
+/* El keyframe que crea el efecto de crecer y desaparecer */
+@keyframes fadeScaleOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.05); /* Crece ligeramente simulando volver al logo grande */
+    }
+}
+
+/* ========================================================
+   HERO SECTION
+   ======================================================== */
+.hero-section {
+    padding: var(--space-xl) 0 var(--space-xxl);
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(239, 64, 54, 0.1);
+    color: var(--cyt-secondary);
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 30px; /* Bordes redondeados sutiles */
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.manifesto-box {
+    max-width: 800px;
+    border-left: 3px solid var(--cyt-secondary);
+    padding-left: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+/* ========================================================
+   VARIABLES ESPECÍFICAS DE TARJETAS (Cromática Oficial)
+   ======================================================== */
+:root {
+    /* Paleta Conecta Empresas */
+    --ce-primary: #112e42;
+    --ce-secondary-1: #00629b;
+    --ce-secondary-2: #ef4036;
+
+    /* Paleta Conecta Universidades */
+    --cu-primary: #9d7cb0;
+    --cu-secondary: #00bcca;
+}
+
+/* ========================================================
+   ECOSISTEMA DUAL (CSS GRID)
+   ======================================================== */
+.ecosystem-section {
+    background-color: var(--bg-gray);
+    padding: var(--space-xl) 0;
+}
+
+.grid-dual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+}
+
+/* Base Estructural de la Tarjeta */
+.card {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* --------------------------------------------------------
+   TARJETA 1: CONECTA EMPRESAS (Bento Box / Estático)
+   -------------------------------------------------------- */
+.card-empresas {
+    background: var(--bg-light);
+    border: 1px solid rgba(17, 46, 66, 0.15); /* Divisor sutil corporativo */
+    border-top: 3px solid var(--ce-primary);
+    border-radius: 2px; /* Corte recto y formal */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.03);
+}
+
+.card-empresas:hover {
+    transform: translateY(-6px);
+    border-top-color: var(--ce-secondary-1); /* #00629b al interactuar */
+}
+
+.card-empresas .card-desc {
+    color: var(--ce-primary);
+}
+
+/* --------------------------------------------------------
+   TARJETA 2: CONECTA UNIVERSIDADES (Cinético / Tribal)
+   -------------------------------------------------------- */
+.card-universidades {
+    background-color: var(--ce-primary); /* Fondo oscuro reduce fatiga */
+    border: 1px solid rgba(157, 124, 176, 0.3);
+    border-radius: 24px; /* Rompe la rigidez con curvas orgánicas */
+    box-shadow: 0 8px 32px rgba(157, 124, 176, 0.15); /* Glow Púrpura #9d7cb0 */
+}
+
+.card-universidades:hover {
+    transform: translateY(-6px) scale(1.02); /* Efecto de levitación */
+    box-shadow: 0 12px 40px rgba(0, 188, 204, 0.3); /* Resplandor Neón Cian #00bcca */
+}
+
+.card-universidades .card-desc {
+    color: rgba(255, 255, 255, 0.85); /* Legibilidad sobre oscuro */
+}
+
+/* ========================================================
+   HEADER DE TARJETAS, LOGOS Y ETIQUETAS
+   ======================================================== */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+}
+
+/* Logos que reemplazan a los H3 */
+.card-logo {
+    max-width: 140px; /* Tamaño controlado y elegante */
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Ajuste de color automático si subes los logos en negro puro SVG */
+.logo-ce {
+    /* Si el logo CE está en SVG negro, esto no afecta, mantiene sus colores. */
+}
+.logo-cu {
+    /* Invierte a blanco el logo de Universidades para que contraste en el fondo oscuro */
+    filter: brightness(0) invert(1); 
+}
+
+/* Etiquetas (Tags) */
+.tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tag-ce {
+    background-color: rgba(0, 98, 155, 0.1);
+    color: var(--ce-secondary-1); /* #00629b */
+    border: 1px solid rgba(0, 98, 155, 0.2);
+    border-radius: 2px; /* Etiqueta corporativa estática */
+}
+
+.tag-cu {
+    background-color: rgba(0, 188, 204, 0.15);
+    color: var(--cu-secondary); /* #00bcca */
+    border: 1px solid rgba(0, 188, 204, 0.3);
+    border-radius: 12px; /* Etiqueta fluida y juvenil */
+}
+/* ========================================================
+   CONTACTO ANTICIPADO
+   ======================================================== */
+.contact-section {
+    background-color: var(--cyt-primary);
+    padding: var(--space-xl) 0;
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.contact-subtitle {
+    margin-bottom: var(--space-lg);
+    font-size: 1.125rem;
+    opacity: 0.9;
+}
+
+.contact-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.action-box p {
+    color: var(--bg-light);
+    margin-bottom: var(--space-sm);
+    font-size: 0.9rem;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--cyt-secondary);
+    color: var(--bg-light);
+    border: 2px solid var(--cyt-secondary);
+}
+
+.btn-primary:hover {
+    background-color: #d1362d;
+    border-color: #d1362d;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--bg-light);
+    border: 2px solid var(--bg-light);
+}
+
+.btn-outline:hover {
+    background-color: var(--bg-light);
+    color: var(--cyt-primary);
+}
+
+/* ========================================================
+   FOOTER
+   ======================================================== */
+.main-footer {
+    background-color: var(--text-dark);
+    color: var(--bg-light);
+    padding: var(--space-md) 0;
+    font-size: 0.875rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.hashtags span {
+    margin-left: 12px;
+    color: var(--text-muted);
+}
