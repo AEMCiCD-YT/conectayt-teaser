@@ -1,14 +1,90 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-EC">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Conecta YT | El puente entre el talento y la industria</title>
+    <meta name="description" content="Únete a Conecta YT, el evento líder en Ecuador que une el talento universitario con las mejores empresas. Participa en nuestra feria de oportunidades el 21 de noviembre.">
+    <meta name="keywords" content="Feria de oportunidades, networking tecnológico, reclutamiento B2B, talento universitario, Conecta Empresas, Conecta Universidades, IEEE Yachay Tech">
+    
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Conecta YT 2026 | El Hub Analógico del Talento y la Industria">
+    <meta property="og:description" content="El abismo entre la teoría y tu futuro profesional termina aquí. Asegura tu lugar en el ecosistema de selección y networking tecnológico líder en Ecuador.">
+    <meta property="og:image" content="media/og_image_conectayt.jpg">
+    <meta property="og:url" content="https://conectayt.com/">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Conecta YT 2026 | Feria de Oportunidades y Networking">
+    <meta name="twitter:description" content="Sal de la pantalla y conecta cara a cara. La innovación técnica se encuentra de frente con el capital y la experiencia este 21 de noviembre.">
+    
     <link rel="icon" type="image/svg+xml" href="media/conectayt_fav.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Conecta YT 2026",
+      "description": "El puente definitivo entre el talento tecnológico y la industria en Ecuador.",
+      "startDate": "2026-11-21T10:00:00-05:00",
+      "endDate": "2026-11-22T02:00:00-05:00",
+      "organizer": [
+        {
+          "@type": "Organization",
+          "name": "AEMCiCD",
+          "email": "asoemc@yachaytech.edu.ec"
+        },
+        {
+          "@type": "Organization",
+          "name": "IEEE Yachay Tech Student Branch",
+          "email": "ieee@yachaytech.edu.ec"
+        }
+      ],
+      "subEvent": [
+        {
+          "@type": "Event",
+          "name": "Conecta Empresas (Jornada Diurna)",
+          "startDate": "2026-11-21T10:00:00-05:00",
+          "endDate": "2026-11-21T18:00:00-05:00",
+          "description": "Feria de oportunidades y vinculación B2B directa para talento multidisciplinario.",
+          "location": {
+            "@type": "Place",
+            "name": "Hotel Ajaví",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ibarra",
+              "addressRegion": "Imbabura",
+              "addressCountry": "EC"
+            }
+          }
+        },
+        {
+          "@type": "Event",
+          "name": "Conecta Universidades (Gala Nocturna)",
+          "startDate": "2026-11-21T20:00:00-05:00",
+          "endDate": "2026-11-22T02:00:00-05:00",
+          "description": "Gala de integración tecnológica y networking interuniversitario de la comunidad IEEE.",
+          "location": {
+            "@type": "Place",
+            "name": "Centro de Eventos Acrópolis",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ibarra",
+              "addressRegion": "Imbabura",
+              "addressCountry": "EC"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+    
 </head>
 <body>
 
@@ -24,7 +100,7 @@
         <section class="hero-section">
             <div class="container">
                 <span class="badge">Iniciando Despliegue</span>
-                <h1 class="hero-title">El puente definitivo entre el talento y la industria está tomando forma.</h1>
+                <h1 class="hero-title">Conecta YT: El puente definitivo entre el talento y la industria está tomando forma.</h1>
                 
                 <div class="manifesto-box">
                     <p class="body-large">Las mentes brillantes y las corporaciones líderes suelen operar en realidades paralelas, perdiendo meses en procesos ineficientes de búsqueda a ciegas. <strong>Conecta YT</strong> nace como una plataforma de convergencia diseñada para eliminar esa fricción.</p>
@@ -35,16 +111,17 @@
 
         <section class="ecosystem-section">
             <div class="container">
-                <h2 class="section-title">El Ecosistema Dual</h2>
+                <h2 class="section-title">El Ecosistema Dual: Feria Empresarial y Networking</h2>
                 
                 <div class="grid-dual">
                     <!-- Tarjeta Conecta Empresas (Rigor B2B) -->
                     <article class="card card-empresas">
                         <div class="card-header">
                             <!-- Logo en lugar del h3 -->
-                            <img src="media/ce_logo_hcolor.svg" alt="Conecta Empresas" class="card-logo logo-ce">
+                            <img src="media/ce_logo_hcolor.svg" alt="Conecta Empresas" class="card-logo logo-ce" loading="lazy">
                             <span class="tag tag-ce">Jornada Diurna</span>
                         </div>
+                        <h3 class="visually-hidden">Conecta Empresas: Feria de Oportunidades y Reclutamiento B2B</h3>
                         <p class="card-desc">Una sesión de rigor corporativo orientada a la vinculación directa. Perfiles multidisciplinarios de ingeniería, ciencias exactas y negocios interactúan frente a frente con reclutadores estratégicos que necesitan inyectar agilidad inmediata en sus operaciones.</p>
                     </article>
 
@@ -52,9 +129,10 @@
                     <article class="card card-universidades">
                         <div class="card-header">
                             <!-- Logo en lugar del h3 -->
-                            <img src="media/cu_logo_hblanco.svg" alt="Conecta Universidades" class="card-logo logo-cu">
+                            <img src="media/cu_logo_hblanco.svg" alt="Conecta Universidades" class="card-logo logo-cu" loading="lazy">
                             <span class="tag tag-cu">Gala Nocturna</span>
                         </div>
+                        <h3 class="visually-hidden">Conecta Universidades: Gala de Integración Tecnológica</h3>
                         <p class="card-desc">La transición hacia el sentido de pertenencia. Al caer la noche, el formato de feria cede el paso a una gala de integración donde Ramas IEEE, clubes estudiantiles y jóvenes profesionales construyen su red de apoyo mediante un relacionamiento libre de presiones evaluativas.</p>
                     </article>
                 </div>
@@ -74,7 +152,7 @@
                       <h3 class="card-title">Sector Corporativo</h3>
                       <p class="card-text">Asegure el acceso directo a un volumen diverso y multidisciplinario de talento, captando a los perfiles más dinámicos antes de que la competencia los absorba.</p>
                       <a href="mailto:empresas@conectayt.com" class="btn btn-solid-red">Contactar a Dirección B2B</a>
-                      <img src="media/ce_logo_hcolor.svg" alt="" class="card-isotipo">
+                      <img src="media/ce_logo_hcolor.svg" alt="" class="card-isotipo" loading="lazy">
                   </div>
 
                   <!-- Tarjeta 2: B2C (Universidades y Sponsors) -->
@@ -86,7 +164,7 @@
                           <a href="mailto:universidades@conectayt.com" class="btn btn-outline-white">Opciones de Patrocinio</a>
                           
                       </div>
-                      <img src="media/cu_logo_hblanco.svg" alt="" class="card-isotipo">
+                      <img src="media/cu_logo_hblanco.svg" alt="" class="card-isotipo" loading="lazy">
                   </div>
               </div>
           </div>
@@ -104,7 +182,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     
 </body>
 </html>
