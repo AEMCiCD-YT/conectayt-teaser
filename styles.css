@@ -366,6 +366,20 @@ h1, h2, h3 {
     justify-content: space-between;
     transition: transform 0.3s ease;
 }
+
+.btn-solid-red, 
+.btn-group-horizontal {
+    margin-top: auto; /* Empuja el bloque interactivo y el logo hacia el fondo absoluto de la tarjeta */
+}
+/* Estilo y posicionamiento del Isotipo */
+.card-isotipo {
+    display: block;
+    align-self: flex-end; /* Lo ancla matemáticamente a la esquina derecha */
+    margin-top: var(--space-md); /* Crea la separación física directa debajo de los botones */
+    width: 180px; /* Tamaño corporativo prudente. Ajustable según el peso de tu SVG */
+    height: auto;
+}
+
 .action-card:hover { transform: translateY(-5px); }
 .card-title { font-size: 1.5rem; font-weight: 700; margin-bottom: var(--space-sm); }
 .card-text { font-size: 1rem; margin-bottom: var(--space-lg); line-height: 1.5; }
