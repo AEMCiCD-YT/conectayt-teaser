@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "route": "/empresas",
+      "redirect": "/",
+      "statusCode": 302
+    },
+    {
+      "route": "/empresas/*",
+      "redirect": "/",
+      "statusCode": 302
+    },
+    {
+      "route": "/universidades",
+      "redirect": "/",
+      "statusCode": 302
+    },
+    {
+      "route": "/universidades/*",
+      "redirect": "/",
+      "statusCode": 302
+    }
+  ]
+}
