@@ -493,3 +493,26 @@ h1, h2, h3 {
     margin-left: 12px;
     color: var(--text-muted);
 }
+
+/* Estilos para el contacto en el footer */
+.footer-contact {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+}
+
+.footer-contact a {
+    color: var(--bg-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Efecto hover utilizando el rojo secundario oficial */
+.footer-contact a:hover {
+    color: var(--cyt-secondary);
+}
+
+.footer-contact .separator {
+    color: var(--text-muted);
+}
