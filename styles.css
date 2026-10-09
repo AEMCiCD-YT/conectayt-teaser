@@ -516,3 +516,85 @@ h1, h2, h3 {
 .footer-contact .separator {
     color: var(--text-muted);
 }
+
+/* ========================================================
+   REGISTRO ABIERTO: DATOS DEL EVENTO Y LLAMADOS A LA ACCIÓN
+   ======================================================== */
+.event-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: var(--space-md);
+    max-width: 900px;
+    margin: var(--space-md) 0;
+}
+
+.event-facts dt,
+.card-meta dt {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.event-facts dd {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--ce-primary);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.btn-solid-blue {
+    background-color: var(--cyt-primary); color: var(--bg-light);
+    border: 2px solid var(--cyt-primary); border-radius: 4px;
+}
+.btn-solid-blue:hover {
+    background-color: var(--ce-primary); border-color: var(--ce-primary);
+    box-shadow: 0 4px 12px rgba(0, 98, 155, 0.35);
+}
+
+.btn-outline-blue {
+    background-color: transparent; color: var(--cyt-primary);
+    border: 2px solid var(--cyt-primary); border-radius: 4px;
+}
+.btn-outline-blue:hover { background-color: rgba(0, 98, 155, 0.08); }
+
+.btn:focus-visible {
+    outline: 3px solid var(--cyt-secondary);
+    outline-offset: 3px;
+}
+
+/* Datos prácticos dentro de las tarjetas del ecosistema */
+.card-meta {
+    display: grid;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+    padding-top: var(--space-md);
+}
+
+.card-meta dd { font-weight: 500; }
+
+.card-empresas .card-meta { border-top: 1px solid rgba(17, 46, 66, 0.15); }
+.card-empresas .card-meta dd { color: var(--ce-primary); }
+
+.card-universidades .card-meta { border-top: 1px solid rgba(255, 255, 255, 0.15); }
+.card-universidades .card-meta dt { color: rgba(255, 255, 255, 0.6); }
+.card-universidades .card-meta dd { color: var(--bg-light); }
+
+.card > .btn { margin-top: auto; align-self: flex-start; }
+.card-universidades > .btn-solid-cyan { flex: 0 0 auto; }
+
+.link-white { color: var(--bg-light); font-weight: 500; }
+.link-white:hover { color: var(--cu-secondary); }
+
+@media (max-width: 768px) {
+    .card > .btn { align-self: stretch; }
+    .hero-actions .btn { width: 100%; }
+    .footer-contact { flex-wrap: wrap; }
+}
